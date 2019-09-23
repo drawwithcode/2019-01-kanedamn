@@ -3,9 +3,19 @@ function preload(){
 }
 
 function setup() {
-  // put setup code here
+  createCanvas(windowWidth, windowHeight);
+  angleMode(DEGREES);
+
+  frameRate(12);
+
+  background(0);
 }
 
 function draw() {
-  // put drawing code here
+  stroke(lerpColor(color(15,145,241),color(15,241,224),frameCount/120));
+  line(windowWidth/2 + 200, windowHeight/2, windowWidth/2 + cos(frameCount * 3)* 200,  windowHeight/2 + sin(frameCount * 3)* 200);
+
+  if(frameCount == 120){
+    noLoop();
+  }
 }
